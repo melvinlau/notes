@@ -40,5 +40,5 @@
 (function noteListViewReturnsEmptyStringIfNoNotes() {
   let noteList = new NoteList();
   let noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.displayHTML() === '');
+  assert.isTrue(noteListView.displayHTML() === 'No notes yet!');
 })();
