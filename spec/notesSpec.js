@@ -1,6 +1,10 @@
-let note = new Note();
-// compare(note.create('Buy rice'), 'Buy rice');
+// describe('note', ()=> {
+//   it('does something', () => {
+//
+//   });
+// });
 
-
-note.create('Buy rice')
-toInclude(note.all(), 'Buy rice');
+(function testNoteInitEmpty() {
+  var note = new Note('hello');
+  assert.isTrue(note.text === 'hello');
+})();
