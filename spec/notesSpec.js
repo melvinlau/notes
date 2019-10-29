@@ -24,4 +24,15 @@
   assert.isTrue(noteList.view().includes('hello'));
 })();
 
-// NOTE-LIST-VIEW
+// NOTE-LIST-VIEW model
+
+(function noteListViewReturnsHTMLStringForANoteList() {
+  let note1 = new Note('hello');
+  let note2 = new Note('world');
+  let noteList = new NoteList();
+  noteList.add(note1);
+  noteList.add(note2);
+  let noteListView = new NoteListView(noteList);
+  assert.isTrue(noteListView.display().includes(
+    '<ul><li>hello</li><li>world</li></ul>'));
+})();
