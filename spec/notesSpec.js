@@ -36,3 +36,9 @@
   assert.isTrue(noteListView.displayHTML().includes(
     '<ul><li>hello</li><li>world</li></ul>'));
 })();
+
+(function noteListViewReturnsEmptyStringIfNoNotes() {
+  let noteList = new NoteList();
+  let noteListView = new NoteListView(noteList);
+  assert.isTrue(noteListView.displayHTML() === '');
+})();
