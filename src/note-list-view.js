@@ -2,7 +2,7 @@ class NoteListView {
   constructor(noteList) {
     this.noteList = noteList;
   }
-  display() {
+  displayHTML() {
     let html = '<ul>';
     this.noteList.view().forEach((note) => {
       html += `<li>${note}</li>`

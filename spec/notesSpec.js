@@ -33,6 +33,6 @@
   noteList.add(note1);
   noteList.add(note2);
   let noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.display().includes(
+  assert.isTrue(noteListView.displayHTML().includes(
     '<ul><li>hello</li><li>world</li></ul>'));
 })();
