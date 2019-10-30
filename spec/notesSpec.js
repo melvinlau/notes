@@ -10,7 +10,7 @@
   assert.isTrue(note.view() === 'Hello World');
 })();
 
-// NOTE-LIST model
+// NOTE LIST model
 
 (function noteListViewDisplaysArrayofNotes() {
   let noteList = new NoteList();
@@ -24,7 +24,7 @@
   assert.isTrue(noteList.view().includes('hello'));
 })();
 
-// NOTE-LIST-VIEW model
+// NOTE LIST VIEW model
 
 (function noteListViewReturnsHTMLStringForANoteList() {
   let note1 = new Note('hello');
@@ -41,4 +41,20 @@
   let noteList = new NoteList();
   let noteListView = new NoteListView(noteList);
   assert.isTrue(noteListView.displayHTML() === 'No notes yet!');
+})();
+
+// NOTE CONTROLLER
+
+(function innerHTMLIsDisplaysCorrectly() {
+  let elementDouble = {
+    innerHTML: 'Favourite drink: coffee'
+  }
+  let documentDouble = {
+    getElementById: function (app) {
+      return elementDouble;
+    }
+  }
+  noteController = new NoteController();
+  noteController.render(documentDouble);
+  assert.isTrue(documentDouble.getElementById("app").innerHTML === noteController.noteListView.displayHTML());
 })();
