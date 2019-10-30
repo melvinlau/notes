@@ -1,3 +1,16 @@
+class NoteController {
+  constructor(noteList = new NoteList) {
+    noteList.add(new Note('Favourite drink: coffee'));
+    this.noteListView = new NoteListView(noteList);
+  }
+  render() {
+    document.getElementById("app").innerHTML = this.noteListView.displayHTML();
+  }
+}
+
+
+// ============================================================================
+
 function sayHowdy() {
   document.getElementById("app").innerHTML = "Howdy!";
 }
