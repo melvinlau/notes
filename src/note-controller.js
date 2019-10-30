@@ -2,15 +2,7 @@ function sayHowdy() {
   document.getElementById("app").innerHTML = "Howdy!";
 }
 
-document.onload = sayHowdy();
-
-
-
-
-
-
-
-
+window.onload = sayHowdy;
 
 
 // let note = new Note();
