@@ -1,4 +1,4 @@
-// SINGLE NOTE VIEW
+// SINGLE NOTE VIEW spec
 
 (function singleNoteViewReturnsHTMLFormattedNote() {
   text = 'Favourite drink: coffee';
