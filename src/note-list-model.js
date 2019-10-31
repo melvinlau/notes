@@ -7,7 +7,7 @@
       return this.noteList;
     }
     add(note) {
-      this.noteList.push(note.view());
+      this.noteList.push(note);
     }
   }
   exports.NoteList = NoteList;

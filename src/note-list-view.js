@@ -7,10 +7,10 @@
       if (this.noteList.view().length === 0) return 'No notes yet!';
       let html = '<ul>';
       this.noteList.view().forEach((note) => {
-        if (note.length > 20) {
-          html += `<li>${note.substring(0,20)}...</li>`
+        if (note.view().length > 20) {
+          html += `<li>${note.view().substring(0,20)}...</li>`
         } else {
-          html += `<li>${note}</li>`
+          html += `<li>${note.view()}</li>`
         }
       });
       html += '</ul>'

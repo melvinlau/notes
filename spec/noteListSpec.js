@@ -9,5 +9,5 @@
   let note = new Note('hello');
   let noteList = new NoteList();
   noteList.add(note);
-  assert.isTrue(noteList.view().includes('hello'));
+  assert.isTrue(noteList.view()[0].text.includes('hello'));
 })();

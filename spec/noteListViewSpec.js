@@ -8,7 +8,7 @@
   noteList.add(note2);
   let noteListView = new NoteListView(noteList);
   assert.isTrue(noteListView.displayHTML().includes(
-    '<ul><li>hello</li><li>world</li></ul>'));
+    '<ul><li>' + 'hello' + '</li><li>' + 'world' + '</li></ul>')); // use regexp?
 })();
 
 (function noteListViewReturnsEmptyStringIfNoNotes() {
@@ -22,6 +22,13 @@
   let noteList = new NoteList();
   noteList.add(note);
   let noteListView = new NoteListView(noteList);
-  let expectedHTML = '<ul><li>The quick brown fox ...</li></ul>';
-  assert.isTrue(noteListView.displayHTML() === expectedHTML);
+  let expectedHTML = 'The quick brown fox ...';
+  assert.isTrue(noteListView.displayHTML().includes(expectedHTML));
 })();
+
+function noteListViewContainsLinksToUniqueNotes() {
+  let note = new Note('howdy');
+  let noteList = new NoteList();
+  notelist.add(note);
+  let noteListView = new NoteListView(noteList);
+}
