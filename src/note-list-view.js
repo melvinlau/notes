@@ -3,6 +3,9 @@
     constructor(noteList) {
       this.noteList = noteList;
     }
+    getList() {
+      return this.noteList;
+    }
     displayHTML() {
       if (this.noteList.view().length === 0) return 'No notes yet!';
       let html = '<ul>';
