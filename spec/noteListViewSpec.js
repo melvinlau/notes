@@ -1,6 +1,6 @@
 // NOTE LIST VIEW model spec
 
-(function noteListViewReturnsHTMLStringForANoteList() {
+function noteListViewReturnsHTMLStringForANoteList() {
   let note1 = new Note('hello');
   let note2 = new Note('world');
   let noteList = new NoteList();
@@ -8,8 +8,8 @@
   noteList.add(note2);
   let noteListView = new NoteListView(noteList);
   assert.isTrue(noteListView.displayHTML().includes(
-    '<ul><li>' + 'hello' + '</li><li>' + 'world' + '</li></ul>')); // use regexp?
-})();
+    '<ul><li>' + 'hello' + '</li><li>' + 'world' + '</li></ul>')); // use regexp to capture <a>?
+}
 
 (function noteListViewReturnsEmptyStringIfNoNotes() {
   let noteList = new NoteList();
@@ -26,9 +26,13 @@
   assert.isTrue(noteListView.displayHTML().includes(expectedHTML));
 })();
 
-function noteListViewContainsLinksToUniqueNotes() {
-  let note = new Note('howdy');
+(function noteListViewContainsLinksToUniqueNotes() {
+  let text = 'howdy';
+  let note = new Note(text);
   let noteList = new NoteList();
-  notelist.add(note);
+  noteList.add(note);
   let noteListView = new NoteListView(noteList);
-}
+  let url = `#notes/${note.id}`;
+  let html = `<a href="${url}">${text}</a>`;
+  assert.isTrue(noteListView.displayHTML().includes(html));
+})();

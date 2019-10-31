@@ -6,12 +6,14 @@
     displayHTML() {
       if (this.noteList.view().length === 0) return 'No notes yet!';
       let html = '<ul>';
+      let text;
       this.noteList.view().forEach((note) => {
         if (note.view().length > 20) {
-          html += `<li>${note.view().substring(0,20)}...</li>`
+          text = note.view().substring(0,20) + '...';
         } else {
-          html += `<li>${note.view()}</li>`
+          text = note.view();
         }
+        html += `<li><a href="#notes/${note.id}">${text}</a></li>`;
       });
       html += '</ul>'
       return html;
