@@ -13,7 +13,7 @@
         } else {
           text = note.view();
         }
-        html += `<li><a href="#notes/${note.id}">${text}</a></li>`;
+        html += `<li><a id="${note.id}" href="#notes/${note.id}">${text}</a></li>`;
       });
       html += '</ul>'
       return html;

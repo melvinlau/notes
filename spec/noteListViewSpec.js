@@ -33,6 +33,6 @@ function noteListViewReturnsHTMLStringForANoteList() {
   noteList.add(note);
   let noteListView = new NoteListView(noteList);
   let url = `#notes/${note.id}`;
-  let html = `<a href="${url}">${text}</a>`;
+  let html = `<a id="${note.id}" href="${url}">${text}</a>`;
   assert.isTrue(noteListView.displayHTML().includes(html));
 })();
